@@ -1,3 +1,4 @@
 /home/yyz/cmake_tutorial/tutorial/Step1/build/CMakeFiles/Tutorial.dir
+/home/yyz/cmake_tutorial/tutorial/Step1/build/CMakeFiles/MathFunction.dir
 /home/yyz/cmake_tutorial/tutorial/Step1/build/CMakeFiles/edit_cache.dir
 /home/yyz/cmake_tutorial/tutorial/Step1/build/CMakeFiles/rebuild_cache.dir

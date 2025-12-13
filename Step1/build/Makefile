@@ -129,6 +129,43 @@ Tutorial/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tutorial.dir/build.make CMakeFiles/Tutorial.dir/build
 .PHONY : Tutorial/fast
 
+#=============================================================================
+# Target rules for targets named MathFunction
+
+# Build rule for target.
+MathFunction: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MathFunction
+.PHONY : MathFunction
+
+# fast build rule for target.
+MathFunction/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MathFunction.dir/build.make CMakeFiles/MathFunction.dir/build
+.PHONY : MathFunction/fast
+
+MathFunctions/MathFunctions.o: MathFunctions/MathFunctions.cxx.o
+.PHONY : MathFunctions/MathFunctions.o
+
+# target to build an object file
+MathFunctions/MathFunctions.cxx.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MathFunction.dir/build.make CMakeFiles/MathFunction.dir/MathFunctions/MathFunctions.cxx.o
+.PHONY : MathFunctions/MathFunctions.cxx.o
+
+MathFunctions/MathFunctions.i: MathFunctions/MathFunctions.cxx.i
+.PHONY : MathFunctions/MathFunctions.i
+
+# target to preprocess a source file
+MathFunctions/MathFunctions.cxx.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MathFunction.dir/build.make CMakeFiles/MathFunction.dir/MathFunctions/MathFunctions.cxx.i
+.PHONY : MathFunctions/MathFunctions.cxx.i
+
+MathFunctions/MathFunctions.s: MathFunctions/MathFunctions.cxx.s
+.PHONY : MathFunctions/MathFunctions.s
+
+# target to generate assembly for a file
+MathFunctions/MathFunctions.cxx.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MathFunction.dir/build.make CMakeFiles/MathFunction.dir/MathFunctions/MathFunctions.cxx.s
+.PHONY : MathFunctions/MathFunctions.cxx.s
+
 Tutorial/Tutorial.o: Tutorial/Tutorial.cxx.o
 .PHONY : Tutorial/Tutorial.o
 
@@ -161,7 +198,11 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... MathFunction"
 	@echo "... Tutorial"
+	@echo "... MathFunctions/MathFunctions.o"
+	@echo "... MathFunctions/MathFunctions.i"
+	@echo "... MathFunctions/MathFunctions.s"
 	@echo "... Tutorial/Tutorial.o"
 	@echo "... Tutorial/Tutorial.i"
 	@echo "... Tutorial/Tutorial.s"

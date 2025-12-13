@@ -64,6 +64,7 @@ CMAKE_BINARY_DIR = /home/yyz/cmake_tutorial/tutorial/Step1/build
 
 # The main recursive "all" target.
 all: CMakeFiles/Tutorial.dir/all
+all: CMakeFiles/MathFunction.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -72,6 +73,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/Tutorial.dir/clean
+clean: CMakeFiles/MathFunction.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -81,7 +83,7 @@ clean: CMakeFiles/Tutorial.dir/clean
 CMakeFiles/Tutorial.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tutorial.dir/build.make CMakeFiles/Tutorial.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tutorial.dir/build.make CMakeFiles/Tutorial.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yyz/cmake_tutorial/tutorial/Step1/build/CMakeFiles --progress-num=1,2 "Built target Tutorial"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yyz/cmake_tutorial/tutorial/Step1/build/CMakeFiles --progress-num=3,4 "Built target Tutorial"
 .PHONY : CMakeFiles/Tutorial.dir/all
 
 # Build rule for subdir invocation for target.
@@ -99,6 +101,32 @@ Tutorial: CMakeFiles/Tutorial.dir/rule
 CMakeFiles/Tutorial.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tutorial.dir/build.make CMakeFiles/Tutorial.dir/clean
 .PHONY : CMakeFiles/Tutorial.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/MathFunction.dir
+
+# All Build rule for target.
+CMakeFiles/MathFunction.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MathFunction.dir/build.make CMakeFiles/MathFunction.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MathFunction.dir/build.make CMakeFiles/MathFunction.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yyz/cmake_tutorial/tutorial/Step1/build/CMakeFiles --progress-num=1,2 "Built target MathFunction"
+.PHONY : CMakeFiles/MathFunction.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/MathFunction.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yyz/cmake_tutorial/tutorial/Step1/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/MathFunction.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yyz/cmake_tutorial/tutorial/Step1/build/CMakeFiles 0
+.PHONY : CMakeFiles/MathFunction.dir/rule
+
+# Convenience name for target.
+MathFunction: CMakeFiles/MathFunction.dir/rule
+.PHONY : MathFunction
+
+# clean rule for target.
+CMakeFiles/MathFunction.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MathFunction.dir/build.make CMakeFiles/MathFunction.dir/clean
+.PHONY : CMakeFiles/MathFunction.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
