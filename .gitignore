@@ -30,3 +30,6 @@ CTestTestfile.cmake
 # ===== OS =====
 .DS_Store
 Thumbs.db
+Step1/.cache/clangd/index/MathFunctions.cxx.202E5E417D0E2065.idx
+Step1/.cache/clangd/index/MathFunctions.h.25429671B54EAD80.idx
+Step1/.cache/clangd/index/Tutorial.cxx.704C168B3F6B49A5.idx
