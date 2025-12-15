@@ -3,12 +3,15 @@ cmake_minimum_required(VERSION 3.23)
 
 # TODO1: Implement MacroAppend
 macro(MacroAppend ListVar Value)
-
+  # message(${ListVar})
+  set(${ListVar} "${${ListVar}};${Value}")
 endmacro()
 
 # TODO2: Call MacroAppend, then return the value from FuncAppend
 function(FuncAppend ListVar Value)
-
+  # set(${ListVar} "${${ListVar}};${Value}" PARENT_SCOPE)
+  MacroAppend(${ListVar} ${Value})
+  set(${ListVar} ${${ListVar}} PARENT_SCOPE)
 endfunction()
 
 
