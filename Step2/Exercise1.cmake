@@ -23,6 +23,11 @@ endif()
 
 set(Original "Beta;Gamma")
 set(Expected "Alpha;Beta;Gamma;Delta")
+message(Expected)
+message("Expected")
+message(${Expected})
+message("${Expected}")
+
 
 set(BeginList ${Original})
 set(EndList "Alpha")
