@@ -1,7 +1,8 @@
 #include <iostream>
 
 // TODO6: Include <format>
-
+// #include <format>
+#include <optional>
 namespace {
 // a hack square root calculation using simple operations
 double mysqrt(double x)
@@ -10,6 +11,8 @@ double mysqrt(double x)
     return 0;
   }
 
+   std::optional<int> tmp=1;
+   std::cout<<tmp.value();
   double result = x;
 
   // do ten iterations
@@ -22,7 +25,8 @@ double mysqrt(double x)
 
     // TODO7: Convert the print to use std::format
     std::cout << "Computing sqrt of " << x << " to be " << result << std::endl;
-  }
+    // std::cout <<std::format("Computing sqrt of " , x ," to be " ,result
+    }
   return result;
 }
 }
