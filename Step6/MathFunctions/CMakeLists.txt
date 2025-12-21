@@ -2,22 +2,22 @@ add_library(MathFunctions)
 
 target_sources(MathFunctions
   PRIVATE
-    MathFunctions.cxx
+  MathFunctions.cxx
 
   PUBLIC
-    FILE_SET HEADERS
-    FILES
-      MathFunctions.h
+  FILE_SET HEADERS
+  FILES
+  MathFunctions.h
 )
 
 target_link_libraries(MathFunctions
   PRIVATE
-    MathLogger
+  MathLogger
 
   PUBLIC
-    OpAdd
-    OpMul
-    OpSub
+  OpAdd
+  OpMul
+  OpSub
 )
 
 target_compile_features(MathFunctions PRIVATE cxx_std_20)
@@ -45,10 +45,24 @@ endif()
 #           int main() {
 #             __builtin_ia32_sqrtsd(v2df{});
 #           }
+include(CheckSourceCompiles)
+check_source_compiles(CXX
+  [=[
+      typedef double v2df __attribute__((vector_size(16)));
+      int main() {
+            __builtin_ia32_sqrtsd(v2df{});
+          }
+]=]
+
+  HAS_GNU_BUILTIN
+)
 
 # TODO5: If the GNU builtins are available, add a compile definition to
 #        MathFunctions named TUTORIAL_USE_GNU_BUILTIN. This will only be needed
 #        by the MathFunctions implementation file.
+if(HAS_GNU_BUILTIN)
+  target_compile_definitions(MathFunctions PRIVATE TUTORIAL_USE_GNU_BUILTIN)
+endif()
 
 add_subdirectory(MathLogger)
 add_subdirectory(MathExtensions)
