@@ -5,8 +5,7 @@
 
 #include <MathFunctions.h>
 
-int main(int argc, char* argv[])
-{
+int main(int argc, char *argv[]) {
   if (argc < 2) {
     std::cout << std::format("Usage: {} number\n", argv[0]);
     return 1;
@@ -23,4 +22,6 @@ int main(int argc, char* argv[])
   // TODO11: Check the calculated square root using mathfunctions::OpMul to
   //         square the outputValue. Output the result with the format:
   //           "The square of {} is {}\n"
+  double const checkValue = mathfunctions::OpMul(outputValue, outputValue);
+  std::cout << std::format("The square of {} is {}\n", outputValue, checkValue);
 }
