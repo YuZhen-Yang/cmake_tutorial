@@ -7,6 +7,9 @@
       "description": "Preset to use with the tutorial",
       "binaryDir": "${sourceDir}/build",
       "cacheVariables": {
+        "CMAKE_CXX_COMPILER":"g++-13",
+        "CMAKE_EXPORT_COMPILE_COMMANDS":"ON",
+
         "TUTORIAL_USE_STD_SQRT": "OFF",
         "TUTORIAL_ENABLE_IPO": "OFF"
       }
