@@ -8,7 +8,7 @@ option(TUTORIAL_ENABLE_IPO "Check for and use IPO support" ON)
 
 # TODO6: Add a default-ON option named BUILD_TESTING with a doc string of:
 #          "Enable testing and build tests"
-
+option(BUILD_TESTING "Enable testing and build tests" ON)
 if(TUTORIAL_ENABLE_IPO)
   include(CheckIPOSupported)
   check_ipo_supported(RESULT result OUTPUT output)
@@ -25,5 +25,9 @@ endif()
 
 # TODO7: Conditional on the value of BUILD_TESTING, enable testing and add the
 #        Tests subdirectory to the project
+if(BUILD_TESTING)
+  enable_testing()
+  add_subdirectory(Tests)
+endif()
 
 add_subdirectory(MathFunctions)
