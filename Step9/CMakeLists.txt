@@ -21,8 +21,11 @@ endif()
 if(TUTORIAL_BUILD_UTILITIES)
   add_subdirectory(Tutorial)
   # TODO1: Install the Tutorial target
-  install(TARGETS Tutorial)
   # TODO3: Add the Tutorial target to the TutorialTargets export
+  install(
+    TARGETS Tutorial
+    EXPORT TutorialTargets
+  )
 endif()
 
 if(BUILD_TESTING)
@@ -33,19 +36,25 @@ endif()
 add_subdirectory(MathFunctions)
 
 # TODO4: Include the GNUInstallDirs module
-
+include(GNUInstallDirs)
 # TODO2: Install the MathFunctions, OpAdd, OpMul, OpSub, SqrtTable, and
 #        MathLogger targets. Ensure you name their header file set so the
 #        headers will be installed.
-install(TARGETS MathFunctions OpAdd OpMul OpSub SqrtTable MathLogger
-      FILE_SET HEADERS
-)
-# TODO5: Add the targets from TODO2 to the TutorialTargets export
 
+# TODO5: Add the targets from TODO2 to the TutorialTargets export
+install(
+  TARGETS MathFunctions OpAdd OpMul OpSub SqrtTable MathLogger
+  EXPORT TutorialTargets #EXPORT 需要在FILE_SET前，不然会报错
+  FILE_SET HEADERS
+)
 # TODO6: Install the TutorialTargets export to:
 #          ${CMAKE_INSTALL_LIBDIR}/cmake/Tutorial
 #        And give them a namespace of "Tutorial::"
-
+install(
+  EXPORT TutorialTargets
+  DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/Tutorial
+  NAMESPACE Tutorial::
+)
 # TODO10: Include CMakePackageConfigHelpers
 
 # TODO11: Use write_basic_package_version_file to write a
@@ -57,3 +66,8 @@ install(TARGETS MathFunctions OpAdd OpMul OpSub SqrtTable MathLogger
 
 # TODO7: Install the config file at cmake/TutorialConfig.cmake to the same
 #        destination as the TutorialTargets export.
+install(
+  FILES 
+    cmake/TutorialConfig.cmake
+  DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/Tutorial
+)
