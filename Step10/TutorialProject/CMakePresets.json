@@ -7,7 +7,10 @@
       "description": "Preset to use with the tutorial",
       "binaryDir": "${sourceDir}/build",
       "cacheVariables": {
-        "TODO4": "Add ${sourceParentDir}/install to CMAKE_PREFIX_PATH",
+        "CMAKE_CXX_COMPILER":"g++-13",
+        "CMAKE_EXPORT_COMPILE_COMMANDS":"ON",
+
+        "CMAKE_PREFIX_PATH": "${sourceParentDir}/install",
         "TUTORIAL_USE_STD_SQRT": "OFF",
         "TUTORIAL_ENABLE_IPO": "OFF"
       }

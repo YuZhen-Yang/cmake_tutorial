@@ -8,6 +8,9 @@
       "binaryDir": "${sourceDir}/build",
       "installDir": "${sourceParentDir}/install",
       "cacheVariables": {
+        "CMAKE_CXX_COMPILER":"g++-13",
+        "CMAKE_EXPORT_COMPILE_COMMANDS":"ON",
+
         "CMAKE_CXX_STANDARD": "20",
         "CMAKE_PREFIX_PATH": "${sourceParentDir}/install"
       }
